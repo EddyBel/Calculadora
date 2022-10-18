@@ -1,0 +1,10 @@
+// Tema claro
+.App.light {
+  @import "./calculator.light";
+  @import "./button.light";
+}
+// Tema oscuro
+.App.dark {
+  @import "./calculator.dark";
+  @import "./button.dark";
+}

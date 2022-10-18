@@ -1,0 +1,21 @@
+@import "../utils/mixin";
+
+.button {
+  @include neomorphism-global("light", 15px, 4px);
+
+  &.special {
+    @include neomorphism-global("blue", 15px, 4px);
+  }
+}
+
+.delete-button-path {
+  fill: #000;
+}
+
+.container-button-theme {
+  @include neomorphism-global("light", 30px, 2px);
+  justify-content: flex-end;
+  .decoration-theme {
+    @include neomorphism-global("light", 50%, 2px);
+  }
+}

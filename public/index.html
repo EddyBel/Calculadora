@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1, initial-scale=1.0" />
+    <!-- Estilos principal -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <!-- -- Contenedor de la aplicacion -- -->
+    <div class="App dark">
+      <!-- Boton cambio de tema -->
+      <div class="container-button-theme">
+        <div class="decoration-theme"></div>
+      </div>
+      <!-- Fin del boton cambio de tema -->
+      <!-- Calculadora -->
+      <main class="calculator">
+        <!-- Seccion de los valores -->
+        <section class="input-and-output-section">
+          <!-- Salida de valores -->
+          <p class="container-output">
+            <span class="output-operation">Formulas</span>
+          </p>
+          <!-- Fin de salida de valores -->
+          <!-- Entrada de valores -->
+          <input type="text" class="input-operation" placeholder="0" />
+          <!-- Fin entrada de valores -->
+        </section>
+        <!-- Fin de la seccion de los valores -->
+        <section class="buttons-section">
+          <!-- Contenedor de los botones basicos -->
+          <div class="buttons-basic">
+            <!-- ------ ... Botones renderizados -------- -->
+          </div>
+          <!-- Contenedor de los botones basicos -->
+        </section>
+      </main>
+      <!-- Fin Calculadora -->
+    </div>
+    <!-- -- Fin del contenedor de la aplicacion -- -->
+    <!-- Codigo Javascript -->
+    <!-- Scripts base -->
+    <script src="../js/constans.js"></script>
+    <script src="../js/svg.js"></script>
+    <script src="../js/render.js"></script>
+    <!-- Scripts Funcionalidad -->
+    <script src="../js/calculator.js"></script>
+    <script src="../js/display.js"></script>
+    <script src="../js/buttons.js"></script>
+    <script src="../js/theme.js"></script>
+    <!-- Fin codigo javascript -->
+  </body>
+</html>
