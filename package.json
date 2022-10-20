@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "build-linux": "electron-packager . calculadora --overwrite --asar=true --platform=linux --arch=x64 --icon=/public/background.png --prune=true --out=release-builds"
+    "build-linux": "electron-packager . calculadora --overwrite --asar=true --platform=linux --arch=x64 --icon=/assets/info/logo.png --prune=true --out=release-builds"
   },
   "keywords": [],
   "devDependencies": {
