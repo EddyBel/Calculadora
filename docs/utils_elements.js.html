@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>utils/elements.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Calculator.html">Calculator</a><ul class='methods'><li data-type='method'><a href="Calculator.html#.addition#addition">addition</a></li><li data-type='method'><a href="Calculator.html#.division#division">division</a></li><li data-type='method'><a href="Calculator.html#.multiplication#multiplication">multiplication</a></li><li data-type='method'><a href="Calculator.html#.percentage#percentage">percentage</a></li><li data-type='method'><a href="Calculator.html#.substraction#substraction">substraction</a></li></ul></li><li><a href="Constraints.html">Constraints</a><ul class='methods'><li data-type='method'><a href="Constraints.html#.Characters#Characters">Characters</a></li><li data-type='method'><a href="Constraints.html#.Clean#Clean">Clean</a></li><li data-type='method'><a href="Constraints.html#.Delete#Delete">Delete</a></li><li data-type='method'><a href="Constraints.html#.Main#Main">Main</a></li><li data-type='method'><a href="Constraints.html#.Numbers#Numbers">Numbers</a></li><li data-type='method'><a href="Constraints.html#.Percentage#Percentage">Percentage</a></li><li data-type='method'><a href="Constraints.html#.Point#Point">Point</a></li><li data-type='method'><a href="Constraints.html#.eventClickOfButton#eventClickOfButton">eventClickOfButton</a></li><li data-type='method'><a href="Constraints.html#.getFinalCharacter#getFinalCharacter">getFinalCharacter</a></li></ul></li><li><a href="Display.html">Display</a><ul class='methods'><li data-type='method'><a href="Display.html#.resetValues#resetValues">resetValues</a></li><li data-type='method'><a href="Display.html#.runOperation#runOperation">runOperation</a></li><li data-type='method'><a href="Display.html#.updateValue#updateValue">updateValue</a></li></ul></li><li><a href="Operations.html">Operations</a><ul class='methods'><li data-type='method'><a href="Operations.html#.MainSolveOperation#MainSolveOperation">MainSolveOperation</a></li><li data-type='method'><a href="Operations.html#.OperatesBySymbol#OperatesBySymbol">OperatesBySymbol</a></li><li data-type='method'><a href="Operations.html#.getTheResultOfTheSpecificOperation#getTheResultOfTheSpecificOperation">getTheResultOfTheSpecificOperation</a></li><li data-type='method'><a href="Operations.html#.resetValues#resetValues">resetValues</a></li><li data-type='method'><a href="Operations.html#.separateTheOperation#separateTheOperation">separateTheOperation</a></li><li data-type='method'><a href="Operations.html#.solveByHierarchyOfOperations#solveByHierarchyOfOperations">solveByHierarchyOfOperations</a></li><li data-type='method'><a href="Operations.html#.updateOperation#updateOperation">updateOperation</a></li></ul></li><li><a href="SVG.html">SVG</a></li></ul><h3>Global</h3><ul><li><a href="global.html#HistoryGlobal">HistoryGlobal</a></li><li><a href="global.html#buttonLayout">buttonLayout</a></li><li><a href="global.html#characters">characters</a></li><li><a href="global.html#convinateArrays">convinateArrays</a></li><li><a href="global.html#createButton">createButton</a></li><li><a href="global.html#createDiv">createDiv</a></li><li><a href="global.html#createH1">createH1</a></li><li><a href="global.html#createLi">createLi</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">utils/elements.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Create a new element div.
+ * @param {String} className String to class of element
+ * @returns New element div
+ */
+const createDiv = (className) => {
+  let newDiv = document.createElement("div");
+  newDiv.setAttribute("class", className);
+  return newDiv;
+};
+
+/**
+ * Create a new element button.
+ * @param {String} className String to class of element.
+ * @returns New element button
+ */
+const createButton = (className) => {
+  let newButton = document.createElement("button");
+  newButton.setAttribute("class", className);
+  return newButton;
+};
+
+/**
+ * Create a new element li.
+ * @param {String} className String to class of element.
+ * @returns New element li
+ */
+const createLi = (className) => {
+  let newLi = document.createElement("li");
+  newLi.setAttribute("class", className);
+  return newLi;
+};
+
+/**
+ * Create a new element h1.
+ * @param {String} className String to class of element.
+ * @returns New element h1
+ */
+const createH1 = (className) => {
+  let newH1 = document.createElement("h1");
+  newH1.setAttribute("class", className);
+  return newH1;
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.0</a> on Fri Dec 02 2022 19:11:09 GMT-0600 (hora estándar central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

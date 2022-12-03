@@ -1,3 +1,4 @@
+/** Class containing svg icons as strings. */
 class SVG {
   constructor(width = "", height = "") {
     this.delete = `<svg

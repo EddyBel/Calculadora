@@ -1,4 +1,4 @@
-w.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const app = document.querySelector(".App"); // Contenedor de aplicacion
   const buttonTheme = document.querySelector(".container-button-theme"); // Boton que cambia el tema
 

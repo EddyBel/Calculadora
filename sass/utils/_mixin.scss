@@ -28,6 +28,11 @@
     // box-shadow: $shadow-value $shadow-value $shadow-value-2x #0070c4,
     //   $shadow-value-negative $shadow-value-negative $shadow-value-2x #00b2ff;
     color: #c8c8c8;
+  } @else if ($theme == "orange") {
+    // border-radius: 50px;
+    background: linear-gradient(145deg, #ff8400, #e66f00);
+    // box-shadow: 20px 20px 84px #a34f00, -20px -20px 84px #ffa700;
+    color: #fff;
   }
   //   Por defecto tema claro
   @else {

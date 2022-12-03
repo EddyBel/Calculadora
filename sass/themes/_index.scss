@@ -2,9 +2,13 @@
 .App.light {
   @import "./calculator.light";
   @import "./button.light";
+  @import "./history.light";
+  @import "./scroll.light";
 }
 // Tema oscuro
 .App.dark {
   @import "./calculator.dark";
   @import "./button.dark";
+  @import "./history.dark";
+  @import "./scroll.dark";
 }

@@ -6,17 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=1, initial-scale=1.0" />
     <!-- Estilos principal -->
-    <link rel="stylesheet" href="../css/global.css" />
+    <!-- <link rel="stylesheet" href="../css/global.css" /> -->
+    <link rel="stylesheet" href="../sass/global.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Calculadora</title>
   </head>
   <body>
     <!-- -- Contenedor de la aplicacion -- -->
-    <div class="App dark">
+    <div class="App light">
       <!-- Boton cambio de tema -->
       <div class="container-button-theme">
         <div class="decoration-theme"></div>
       </div>
       <!-- Fin del boton cambio de tema -->
+      <!-- Boton de historial -->
+      <button class="button-history">H</button>
+      <!-- Fin del boton de historial -->
+
+      <!-- History section -->
+      <section class="HISTORY">
+        <button class="button-back-history">R</button>
+        <ul class="container-list-operations"></ul>
+      </section>
+      <!-- End History section -->
+
       <!-- Calculadora -->
       <main class="calculator">
         <!-- Seccion de los valores -->
@@ -43,15 +56,24 @@
     </div>
     <!-- -- Fin del contenedor de la aplicacion -- -->
     <!-- Codigo Javascript -->
-    <!-- Scripts base -->
+    <!-- Base -->
     <script src="../js/constans.js"></script>
+    <script src="../js/utils/elements.js"></script>
+    <script src="../js/utils/converts.js"></script>
     <script src="../js/svg.js"></script>
-    <script src="../js/render.js"></script>
-    <!-- Scripts Funcionalidad -->
-    <script src="../js/calculator.js"></script>
-    <script src="../js/display.js"></script>
-    <script src="../js/buttons.js"></script>
-    <script src="../js/theme.js"></script>
+    <!-- Logica -->
+    <script src="../js/logic/calculator.js"></script>
+    <script src="../js/logic/operations.js"></script>
+    <script src="../js/logic/display.js"></script>
+    <script src="../js/logic/constraints.js"></script>
+    <!-- Renders -->
+    <script src="../js/renders/render.js"></script>
+    <script src="../js/renders/renderOperations.js"></script>
+    <!-- dom -->
+    <!-- <script src="../js/functions/buttons.js"></script> -->
+    <script src="../js/functions/buttons.js"></script>
+    <script src="../js/functions/buttonHistory.js"></script>
+    <script src="../js/functions/theme.js"></script>
     <!-- Fin codigo javascript -->
   </body>
 </html>

@@ -1,9 +1,11 @@
 // Base
 @import "./base/reset";
-@import "./base/typo";
+// @import "./base/typo";
 // layouts
 @import "./layouts/calculator";
+@import "./layouts/index";
 // common
 @import "./common/buttons";
+@import "./common/index";
 // Temas
 @import "./themes/index";

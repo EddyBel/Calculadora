@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>logic/operations.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Calculator.html">Calculator</a><ul class='methods'><li data-type='method'><a href="Calculator.html#.addition#addition">addition</a></li><li data-type='method'><a href="Calculator.html#.division#division">division</a></li><li data-type='method'><a href="Calculator.html#.multiplication#multiplication">multiplication</a></li><li data-type='method'><a href="Calculator.html#.percentage#percentage">percentage</a></li><li data-type='method'><a href="Calculator.html#.substraction#substraction">substraction</a></li></ul></li><li><a href="Constraints.html">Constraints</a><ul class='methods'><li data-type='method'><a href="Constraints.html#.Characters#Characters">Characters</a></li><li data-type='method'><a href="Constraints.html#.Clean#Clean">Clean</a></li><li data-type='method'><a href="Constraints.html#.Delete#Delete">Delete</a></li><li data-type='method'><a href="Constraints.html#.Main#Main">Main</a></li><li data-type='method'><a href="Constraints.html#.Numbers#Numbers">Numbers</a></li><li data-type='method'><a href="Constraints.html#.Percentage#Percentage">Percentage</a></li><li data-type='method'><a href="Constraints.html#.Point#Point">Point</a></li><li data-type='method'><a href="Constraints.html#.eventClickOfButton#eventClickOfButton">eventClickOfButton</a></li><li data-type='method'><a href="Constraints.html#.getFinalCharacter#getFinalCharacter">getFinalCharacter</a></li></ul></li><li><a href="Display.html">Display</a><ul class='methods'><li data-type='method'><a href="Display.html#.resetValues#resetValues">resetValues</a></li><li data-type='method'><a href="Display.html#.runOperation#runOperation">runOperation</a></li><li data-type='method'><a href="Display.html#.updateValue#updateValue">updateValue</a></li></ul></li><li><a href="Operations.html">Operations</a><ul class='methods'><li data-type='method'><a href="Operations.html#.MainSolveOperation#MainSolveOperation">MainSolveOperation</a></li><li data-type='method'><a href="Operations.html#.OperatesBySymbol#OperatesBySymbol">OperatesBySymbol</a></li><li data-type='method'><a href="Operations.html#.getTheResultOfTheSpecificOperation#getTheResultOfTheSpecificOperation">getTheResultOfTheSpecificOperation</a></li><li data-type='method'><a href="Operations.html#.resetValues#resetValues">resetValues</a></li><li data-type='method'><a href="Operations.html#.separateTheOperation#separateTheOperation">separateTheOperation</a></li><li data-type='method'><a href="Operations.html#.solveByHierarchyOfOperations#solveByHierarchyOfOperations">solveByHierarchyOfOperations</a></li><li data-type='method'><a href="Operations.html#.updateOperation#updateOperation">updateOperation</a></li></ul></li><li><a href="SVG.html">SVG</a></li></ul><h3>Global</h3><ul><li><a href="global.html#HistoryGlobal">HistoryGlobal</a></li><li><a href="global.html#buttonLayout">buttonLayout</a></li><li><a href="global.html#characters">characters</a></li><li><a href="global.html#convinateArrays">convinateArrays</a></li><li><a href="global.html#createButton">createButton</a></li><li><a href="global.html#createDiv">createDiv</a></li><li><a href="global.html#createH1">createH1</a></li><li><a href="global.html#createLi">createLi</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">logic/operations.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** class that contains the form of solving operations
+ * @example
+ * const operations = new Operations();
+ */
+class Operations {
+  /** Create a new operations room */
+  constructor() {
+    this.operation = "";
+    this.operationByParts = [];
+    this.calculator = new Calculator();
+    this.result = 0;
+    this.interimResult = 0;
+    this.historyLocal = [];
+    this.operationsHierarchy = ["%", "x", "/", "+", "-"];
+  }
+
+  /**
+   * Main function that will solve the given operation.
+   * * Update the pass operation.
+   * * Update the pass operation.
+   * * Separate the operation by parts.
+   * * Go through the operation in parts and to solve each operation.
+   * * Add local history to global history
+   * @param {string} operation Operation as string passed by parameter.
+   * @returns {number} Final result of the operation.
+   * @example
+   * const result = operations.MainSolveOperation("2 + 2")
+   * // result = 4
+   */
+  MainSolveOperation(operation) {
+    this.updateOperation(operation);
+    this.separateTheOperation();
+
+    this.operationByParts.map(() => {
+      this.solveByHierarchyOfOperations();
+    });
+
+    this.result =
+      this.interimResult === 0 ? this.operation : this.interimResult;
+
+    this.historyLocal.push(this.result);
+    HistoryGlobal.push(this.historyLocal);
+
+    this.resetValues();
+    return this.result;
+  }
+
+  /**
+   * Operates by hierarchy of operations.
+   * * Traverse in order the array with the hierarchy of operations and resolve.
+   */
+  solveByHierarchyOfOperations() {
+    for (let character of this.operationsHierarchy) {
+      if (this.operationByParts.includes(character)) {
+        this.OperatesBySymbol(character);
+        break;
+      }
+    }
+  }
+
+  /**
+   * Solve the entire operation according to the symbol passed.
+   *  * First declare all the variables to be used in the operation.
+   *  * Operates and saves the result of the operation in a variable.
+   *  * Replaces the character with the result and removes the surrounding values.
+   *  * Return the modified operation array to a space-separated string and store it in the operation.
+   *  * Save the operation in the history array.
+   * @param {string} character Symbol to solve.
+   */
+  OperatesBySymbol(character) {
+    let positionCharacter = this.operationByParts.indexOf(character);
+    let positionNext = positionCharacter + 1;
+    let positionPrevius = positionCharacter - 1;
+    let valueNext = this.operationByParts[positionNext];
+    let valuePrevius = this.operationByParts[positionPrevius];
+
+    this.interimResult = this.getTheResultOfTheSpecificOperation(
+      character,
+      valuePrevius,
+      valueNext
+    );
+
+    this.operationByParts.splice(positionCharacter, 1, this.interimResult);
+
+    if (character == "%") {
+      this.operationByParts.splice(positionPrevius, 1);
+    } else {
+      this.operationByParts.splice(positionPrevius, 1);
+      this.operationByParts.splice(positionCharacter, 1);
+    }
+
+    this.historyLocal.push(this.operation);
+    this.updateOperation(this.operationByParts.join(" "));
+  }
+
+  /**
+   * Do the operation according to the passed character.
+   * @param {string} character Operator to evaluate.
+   * @param {number} valuePrevius First value.
+   * @param {number} valueNext Second value.
+   * @returns {number} Operation result
+   */
+  getTheResultOfTheSpecificOperation(character, valuePrevius, valueNext) {
+    switch (character) {
+      case "%":
+        return this.calculator.percentage(valuePrevius);
+      case "x":
+        return this.calculator.multiplication(valuePrevius, valueNext);
+      case "/":
+        return this.calculator.division(valuePrevius, valueNext);
+      case "+":
+        return this.calculator.addition(valuePrevius, valueNext);
+      case "-":
+        return this.calculator.substraction(valuePrevius, valueNext);
+    }
+  }
+
+  /** Separate the feature using space as a reference. */
+  separateTheOperation() {
+    this.operationByParts = this.operation.split(" ");
+  }
+
+  /**
+   * Catalizes the value of the operation.
+   * @param {string} operation Input operation.
+   */
+  updateOperation(operation) {
+    this.operation = operation;
+  }
+
+  /** Reset all values */
+  resetValues() {
+    this.historyLocal = [];
+    this.operationByParts = [];
+    this.operation = "";
+    this.interimResult = 0;
+  }
+}
+
+// For the test.
+// module.exports = { Operations };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.0</a> on Fri Dec 02 2022 19:11:09 GMT-0600 (hora estándar central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

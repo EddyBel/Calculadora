@@ -3,7 +3,6 @@
 // Boton basico
 .buttons-basic {
   @include flex(column, space-between, none, 0px, nowrap);
-  //   background: blue;
   height: 80vh;
   padding: 10px;
   padding-top: 30px;
@@ -11,6 +10,31 @@
   .constainer-butons {
     // background: yellow;
     @include flex(row, space-evenly, center, 16px, nowrap);
+  }
+
+  .container-buttons-end {
+    @include flex(row-reverse, space-between, center, 10px);
+    // background: yellow;
+
+    .button {
+      &.special {
+        height: 100%;
+        max-width: 80px;
+      }
+    }
+
+    .container-buttons-end-numbers {
+      @include flex(column, center, center, 25px);
+      // background: blue;
+      width: 100%;
+      height: 100%;
+
+      .constainer-butons {
+        // background: yellow;
+        width: 100%;
+        margin: 0;
+      }
+    }
   }
 }
 

@@ -6,6 +6,9 @@
   &.special {
     @include neomorphism-global("blue", 15px, 4px);
   }
+  &.orange {
+    @include neomorphism-global("orange", 15px, 4px);
+  }
 }
 
 .delete-button-path {

@@ -1,14 +1,10 @@
 ## <h1 align="center">Math-my</h1>
 
----
-
-![Logo del proyecto](./assets/info/Math-my.png)
+![Logo del proyecto](./assets/doc/Math-my.png)
 
 Math-my is a basic cross-platform desktop calculator, based on web technologies, with a neomorphism style design, it has two themes, light and dark.
 
 # Installation
-
----
 
 Cloning the repository whit commad.
 
@@ -31,8 +27,6 @@ npm run build-linux
 
 ## Project status
 
----
-
 ### Current features
 
 - Addition
@@ -48,14 +42,13 @@ npm run build-linux
 
 # Project view
 
+![Imagen 1](./assets/doc/white.png)
+
 ---
 
-![Imagen 1](./assets/info/calculadora1.png)
-![Imagen 2](./assets/info/calculadora2.png)
+![Imagen 2](./assets/doc/black.png)
 
 ## Technologies
-
----
 
 - HTML
 - Javascript

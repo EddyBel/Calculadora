@@ -11,7 +11,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc -c jsdoc.json",
     "start": "electron .",
     "build-linux": "electron-packager . calculadora --overwrite --asar=true --platform=linux --arch=x64 --icon=/assets/info/logo.png --prune=true --out=release-builds"
   },
@@ -19,5 +19,9 @@
   "devDependencies": {
     "electron": "^21.1.1",
     "electron-packager": "^16.0.0"
+  },
+  "dependencies": {
+    "docdash": "^2.0.0",
+    "jsdoc": "^4.0.0"
   }
 }
