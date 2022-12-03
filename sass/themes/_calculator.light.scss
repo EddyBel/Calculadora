@@ -1,9 +1,0 @@
-@import "../utils/mixin";
-
-.calculator {
-  @include neomorphism-global("light", 0px, 10px);
-}
-
-.output-operation {
-  color: rgba($color: #17202a, $alpha: 0.7);
-}
