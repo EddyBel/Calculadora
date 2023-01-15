@@ -4,6 +4,8 @@
 
 Math-my is a basic cross-platform desktop calculator, based on web technologies, with a neomorphism style design, it has two themes, light and dark.
 
+:link: [Documentation](https://eddybel.github.io/Math-my/)
+
 # Installation
 
 Cloning the repository whit commad.
