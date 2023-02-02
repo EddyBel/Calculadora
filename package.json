@@ -1,6 +1,6 @@
 {
   "name": "calculadora",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Calculadora-con-electron",
   "productName": "Electron tutorial app",
   "author": {
@@ -13,7 +13,8 @@
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
     "start": "electron .",
-    "build-linux": "electron-packager . calculadora --overwrite --asar=true --platform=linux --arch=x64 --icon=/assets/info/logo.png --prune=true --out=release-builds"
+    "build-linux": "electron-packager . Math-my --overwrite --asar=true --platform=linux --arch=x64 --icon=/assets/info/logo.png --prune=true --out=release-builds",
+    "build-windows": "electron-packager . Math-my --platform=win32 --arch=x64"
   },
   "keywords": [],
   "devDependencies": {

@@ -1,4 +1,12 @@
-## <h1 align="center">Math-my</h1>
+<h1 align="center">Math-my</h1>
+
+![stat](https://img.shields.io/github/last-commit/EddyBel/Math-my?color=%23AED6F1&style=for-the-badge)
+![stat](https://img.shields.io/github/license/EddyBel/Math-my?color=%23EAECEE&style=for-the-badge)
+![stat](https://img.shields.io/github/languages/top/EddyBel/Math-my?color=%23F9E79F&style=for-the-badge)
+![stat](https://img.shields.io/github/languages/count/EddyBel/Math-my?color=%23ABEBC6&style=for-the-badge)
+![stat](https://img.shields.io/github/languages/code-size/EddyBel/Math-my?color=%23F1948A&style=for-the-badge)
+
+---
 
 ![Logo del proyecto](./assets/doc/Math-my.png)
 
